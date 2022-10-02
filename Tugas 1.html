@@ -134,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
    Tugas 3 Modelling Klasifikasi-Implementasi KNN
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%204.html">
+   Tugas 4 - K-Means
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -632,6 +637,81 @@ Name: lvrat, Length: 2380, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Internal Python error in the inspect module.
+Below is the traceback from this internal error.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 3326, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File &quot;&lt;ipython-input-16-2a34e7750742&gt;&quot;, line 2, in &lt;module&gt;
+    import seaborn as sns
+  File &quot;/usr/local/lib/python3.7/dist-packages/seaborn/__init__.py&quot;, line 2, in &lt;module&gt;
+    from .rcmod import *  # noqa: F401,F403
+  File &quot;/usr/local/lib/python3.7/dist-packages/seaborn/rcmod.py&quot;, line 7, in &lt;module&gt;
+    from . import palettes
+  File &quot;/usr/local/lib/python3.7/dist-packages/seaborn/palettes.py&quot;, line 9, in &lt;module&gt;
+    from .utils import desaturate, get_color_cycle
+  File &quot;/usr/local/lib/python3.7/dist-packages/seaborn/utils.py&quot;, line 10, in &lt;module&gt;
+    from scipy import stats
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/__init__.py&quot;, line 441, in &lt;module&gt;
+    from .stats import *
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/stats.py&quot;, line 43, in &lt;module&gt;
+    from . import distributions
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/distributions.py&quot;, line 10, in &lt;module&gt;
+    from . import _continuous_distns
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/_continuous_distns.py&quot;, line 5472, in &lt;module&gt;
+    lognorm = lognorm_gen(a=0.0, name=&#39;lognorm&#39;)
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/_distn_infrastructure.py&quot;, line 1739, in __init__
+    self._construct_doc(docdict, dct.get(self.name))
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/stats/_distn_infrastructure.py&quot;, line 824, in _construct_doc
+    self.__doc__ = doccer.docformat(self.__doc__, tempdict)
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/_lib/doccer.py&quot;, line 53, in docformat
+    icount = indentcount_lines(lines[1:])
+  File &quot;/usr/local/lib/python3.7/dist-packages/scipy/_lib/doccer.py&quot;, line 196, in indentcount_lines
+    indentno = min(indentno, len(line) - len(stripped))
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/interactiveshell.py&quot;, line 2040, in showtraceback
+    stb = value._render_traceback_()
+AttributeError: &#39;KeyboardInterrupt&#39; object has no attribute &#39;_render_traceback_&#39;
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/ultratb.py&quot;, line 1101, in get_records
+    return _fixed_getinnerframes(etb, number_of_lines_of_context, tb_offset)
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/ultratb.py&quot;, line 319, in wrapped
+    return f(*args, **kwargs)
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/ultratb.py&quot;, line 353, in _fixed_getinnerframes
+    records = fix_frame_records_filenames(inspect.getinnerframes(etb, context))
+  File &quot;/usr/lib/python3.7/inspect.py&quot;, line 1502, in getinnerframes
+    frameinfo = (tb.tb_frame,) + getframeinfo(tb, context)
+  File &quot;/usr/lib/python3.7/inspect.py&quot;, line 1464, in getframeinfo
+    lines, lnum = findsource(frame)
+  File &quot;/usr/local/lib/python3.7/dist-packages/IPython/core/ultratb.py&quot;, line 185, in findsource
+    lines = linecache.getlines(file, globals_dict)
+  File &quot;/usr/lib/python3.7/linecache.py&quot;, line 47, in getlines
+    return updatecache(filename, module_globals)
+  File &quot;/usr/lib/python3.7/linecache.py&quot;, line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File &quot;/usr/lib/python3.7/tokenize.py&quot;, line 449, in open
+    encoding, lines = detect_encoding(buffer.readline)
+  File &quot;/usr/lib/python3.7/tokenize.py&quot;, line 418, in detect_encoding
+    first = read_or_stop()
+  File &quot;/usr/lib/python3.7/tokenize.py&quot;, line 376, in read_or_stop
+    return readline()
+KeyboardInterrupt
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

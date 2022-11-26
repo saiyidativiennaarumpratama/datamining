@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tugas 2 Diskritisasi &#8212; Saiyidati Vienna Arum Pratama</title>
+    <title>Tugas 2 - Diskritisasi &#8212; Saiyidati Vienna Arum Pratama</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 3 Modelling Klasifikasi-Implementasi KNN" href="Tugas%203.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="Tugas%201.html" />
+    <link rel="next" title="Tugas 3 - K-Nearest Neighbor" href="Tugas%203.html" />
+    <link rel="prev" title="Tugas 1 - Statistika Deskriptif" href="Tugas%201.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -121,19 +121,24 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%201.html">
+   Tugas 1 - Statistika Deskriptif
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tugas 2 Diskritisasi
+   Tugas 2 - Diskritisasi
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas%203.html">
-   Tugas 3 Modelling Klasifikasi-Implementasi KNN
+   Tugas 3 - K-Nearest Neighbor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas%204.html">
-   Tugas 4 - K-Means
+   Tugas 4 - Gaussian Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,7 +148,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas%205.html">
-   Tugas 5 - Dataset messidor_features
+   Tugas 5 - K-Means Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%206.html">
+   Tugas 6 - Decision Tree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%207.html">
+   Tugas 7 - Diabetic Retinopathy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%208.html">
+   Tugas 8 - Regression Linier
   </a>
  </li>
 </ul>
@@ -342,7 +362,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tugas 2 Diskritisasi</h1>
+                <h1>Tugas 2 - Diskritisasi</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -355,7 +375,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tugas-2-diskritisasi">
-<h1>Tugas 2 Diskritisasi<a class="headerlink" href="#tugas-2-diskritisasi" title="Permalink to this headline">#</a></h1>
+<h1>Tugas 2 - Diskritisasi<a class="headerlink" href="#tugas-2-diskritisasi" title="Permalink to this headline">#</a></h1>
+<p>Nama : Saiyidati Vienna Arum Pratama<br />
+Nim  : 200411100018<br />
+Kelas: Penambangan Data IF 5A</p>
 <p>Carilah data yang bertipe numerik (data klassifikasi)</p>
 <ol class="simple">
 <li><p>Lakukan proses diskritisasi dengan equal width dan equal frequency</p></li>
@@ -390,10 +413,13 @@ i &amp;= 1,2, ... k-1
 <div><p><strong>Equal - Frequency Intervals</strong>
 Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 </div></blockquote>
-<p>Menggunakan Dataset Iris</p>
+<blockquote>
+<div><p>Menggunakan Dataset Iris<br />
+Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Membaca dataset iris</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import library</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">statistics</span> <span class="k">as</span> <span class="nn">st</span>
@@ -411,7 +437,7 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ee0a4011-98c8-4f21-b530-601b049fe7c2">
+  <div id="df-d942f2db-52d0-42a7-a8db-5488b5dfcd22">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -531,7 +557,7 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ee0a4011-98c8-4f21-b530-601b049fe7c2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d942f2db-52d0-42a7-a8db-5488b5dfcd22')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -582,12 +608,12 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ee0a4011-98c8-4f21-b530-601b049fe7c2 button.colab-df-convert');
+          document.querySelector('#df-d942f2db-52d0-42a7-a8db-5488b5dfcd22 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ee0a4011-98c8-4f21-b530-601b049fe7c2');
+          const element = document.querySelector('#df-d942f2db-52d0-42a7-a8db-5488b5dfcd22');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -639,7 +665,7 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4b446b9a-a9bc-4795-b246-da01e9c6e91c">
+  <div id="df-b79e2621-b860-4aec-81ee-91c2c85acb6e">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -855,7 +881,7 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 </table>
 <p>150 rows × 13 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4b446b9a-a9bc-4795-b246-da01e9c6e91c')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b79e2621-b860-4aec-81ee-91c2c85acb6e')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -906,12 +932,12 @@ Membagi data menjadi k dengan Rentang frekuensi yang sama</p>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4b446b9a-a9bc-4795-b246-da01e9c6e91c button.colab-df-convert');
+          document.querySelector('#df-b79e2621-b860-4aec-81ee-91c2c85acb6e button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4b446b9a-a9bc-4795-b246-da01e9c6e91c');
+          const element = document.querySelector('#df-b79e2621-b860-4aec-81ee-91c2c85acb6e');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -956,7 +982,7 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-684d1f1d-0eab-4ad2-9788-534ddcf41de0">
+  <div id="df-e010a3db-adf4-4b18-9f0f-9e83849a15ed">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1064,7 +1090,7 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 </table>
 <p>150 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-684d1f1d-0eab-4ad2-9788-534ddcf41de0')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e010a3db-adf4-4b18-9f0f-9e83849a15ed')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1115,12 +1141,12 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 
       <script>
         const buttonEl =
-          document.querySelector('#df-684d1f1d-0eab-4ad2-9788-534ddcf41de0 button.colab-df-convert');
+          document.querySelector('#df-e010a3db-adf4-4b18-9f0f-9e83849a15ed button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-684d1f1d-0eab-4ad2-9788-534ddcf41de0');
+          const element = document.querySelector('#df-e010a3db-adf4-4b18-9f0f-9e83849a15ed');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1150,7 +1176,7 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4d781d01-4833-4259-a3f8-0188e976b936">
+  <div id="df-f3eb0707-20a9-48c0-9509-871f5e2fe108">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1366,7 +1392,7 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 </table>
 <p>150 rows × 13 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4d781d01-4833-4259-a3f8-0188e976b936')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f3eb0707-20a9-48c0-9509-871f5e2fe108')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1417,12 +1443,12 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4d781d01-4833-4259-a3f8-0188e976b936 button.colab-df-convert');
+          document.querySelector('#df-f3eb0707-20a9-48c0-9509-871f5e2fe108 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4d781d01-4833-4259-a3f8-0188e976b936');
+          const element = document.querySelector('#df-f3eb0707-20a9-48c0-9509-871f5e2fe108');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1443,11 +1469,9 @@ Equal-frequency intervals adalah discretization yang membagi data numerik menjad
   </div>
 </div></div>
 </div>
-<p><strong>Entropy</strong>
-Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) dari attribut dari suatu kumpulan obyek data dalam satuan bit</p>
-<p>Entropy</p>
+<p><strong>Entropy dan Gain</strong></p>
 <blockquote>
-<div><p><em>Entropy adalah</em></p>
+<div><p>Entropy Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian dari attribut dari suatu kumpulan obyek data dalam satuan bit</p>
 </div></blockquote>
 <blockquote>
 <div><ul class="simple">
@@ -1480,7 +1504,7 @@ Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) d
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2927dc07-921c-441f-a702-02b300d41c45">
+  <div id="df-c43681e7-f4ca-4da8-8908-5cb2f743b6ef">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1564,7 +1588,7 @@ Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) d
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2927dc07-921c-441f-a702-02b300d41c45')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c43681e7-f4ca-4da8-8908-5cb2f743b6ef')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1615,12 +1639,12 @@ Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) d
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2927dc07-921c-441f-a702-02b300d41c45 button.colab-df-convert');
+          document.querySelector('#df-c43681e7-f4ca-4da8-8908-5cb2f743b6ef button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2927dc07-921c-441f-a702-02b300d41c45');
+          const element = document.querySelector('#df-c43681e7-f4ca-4da8-8908-5cb2f743b6ef');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1651,10 +1675,10 @@ Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) d
 </div>
 </div>
 </div>
-<p>Fungsi yang digunakan untuk proses</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">nilai</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#untuk proses informasi D</span>
+<span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">nilai</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
   <span class="n">less_group</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">sample</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">nilai</span><span class="p">]</span>
   <span class="n">greater_group</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="n">sample</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">nilai</span><span class="p">]</span>
 
@@ -1716,7 +1740,7 @@ Entropi adalah nilai informasi yang menyatakan ukuran ketidakpastian(impurity) d
 </div>
 </div>
 </div>
-<p>Melakukan beberapa tes split untuk menari informasi yang terbaik</p>
+<p>Melakukan beberapa tes split untuk menarik informasi yang terbaik</p>
 <p><strong>Split 1 : 4.5</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1797,13 +1821,13 @@ Semakin kecil nilai Gain terhadap nilai Einisial dan Enew, maka semakin baik aku
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
+            <p class="prev-next-title">Tugas 1 - Statistika Deskriptif</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Tugas%203.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tugas 3 Modelling Klasifikasi-Implementasi KNN</p>
+        <p class="prev-next-title">Tugas 3 - K-Nearest Neighbor</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tugas 3 Modelling Klasifikasi-Implementasi KNN &#8212; Saiyidati Vienna Arum Pratama</title>
+    <title>Tugas 3 - K-Nearest Neighbor &#8212; Saiyidati Vienna Arum Pratama</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 4 - K-Means" href="Tugas%204.html" />
-    <link rel="prev" title="Tugas 2 Diskritisasi" href="Tugas%202.html" />
+    <link rel="next" title="Tugas 4 - Gaussian Naive Bayes" href="Tugas%204.html" />
+    <link rel="prev" title="Tugas 2 - Diskritisasi" href="Tugas%202.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -120,18 +120,23 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%201.html">
+   Tugas 1 - Statistika Deskriptif
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Tugas%202.html">
-   Tugas 2 Diskritisasi
+   Tugas 2 - Diskritisasi
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tugas 3 Modelling Klasifikasi-Implementasi KNN
+   Tugas 3 - K-Nearest Neighbor
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas%204.html">
-   Tugas 4 - K-Means
+   Tugas 4 - Gaussian Naive Bayes
   </a>
  </li>
  <li class="toctree-l1">
@@ -141,7 +146,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas%205.html">
-   Tugas 5 - Dataset messidor_features
+   Tugas 5 - K-Means Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%206.html">
+   Tugas 6 - Decision Tree
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%207.html">
+   Tugas 7 - Diabetic Retinopathy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas%208.html">
+   Tugas 8 - Regression Linier
   </a>
  </li>
 </ul>
@@ -340,7 +360,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tugas 3 Modelling Klasifikasi-Implementasi KNN</h1>
+                <h1>Tugas 3 - K-Nearest Neighbor</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -352,44 +372,38 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-3-modelling-klasifikasi-implementasi-knn">
-<h1>Tugas 3 Modelling Klasifikasi-Implementasi KNN<a class="headerlink" href="#tugas-3-modelling-klasifikasi-implementasi-knn" title="Permalink to this headline">#</a></h1>
-<p>KNN (K-Nearest Neighbor) adalah algoritma klasifikasi terawasi sederhana yang dapat kita gunakan untuk menetapkan kelas ke titik data baru.</p>
-<p>Implementasi KNN pada dataset iris menggunakan scikit-learn library. Dataset Iris memiliki 50 sampel untuk setiap spesies bunga Iris yang berbeda (total 150). Untuk setiap sampel kami memiliki panjang sepal, lebar dan panjang dan lebar kelopak dan nama spesies (kelas/label).
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-3-k-nearest-neighbor">
+<h1>Tugas 3 - K-Nearest Neighbor<a class="headerlink" href="#tugas-3-k-nearest-neighbor" title="Permalink to this headline">#</a></h1>
+<p>Nama : Saiyidati Vienna Arum Pratama<br />
+Nim  : 200411100018<br />
+Kelas: Penambangan Data IF 5A</p>
+<blockquote>
+<div><p><strong>KNN (K-Nearest Neighbor)</strong> adalah algoritma supervised untuk melakukan klasifikasi terhadap objek dengan data pembelajaran yang jaraknya paling dekat dengan objek tersebut. Kasus khusus di mana klasifikasi diprediksikan berdasarkan data pembelajaran yang paling dekat (dengan kata lain, k = 1)</p>
+</div></blockquote>
+<blockquote>
+<div><p>Rumus untuk menghitung bobot kemiripan (similarity) dengan Nearest Neighbor
+digunakan rumus Euclidean yaitu</p>
+</div></blockquote>
+<p>![jarak ecludian.PNG](data:image/png;base64,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)</p>
+<blockquote>
+<div><p>Tujuan dari algoritma K-NN adalah untuk mengklasifikasikan obyek baru berdasarkan atribut dan sample-sample dari training data.</p>
+</div></blockquote>
+<p>Implementasi KNN pada dataset iris menggunakan scikit-learn library. Dataset Iris memiliki 50 sampel untuk setiap spesies bunga Iris yang berbeda. Total semua data yaitu 150. Untuk setiap sampel  memiliki panjang sepal, lebar dan panjang dan lebar kelopak dan nama spesies (kelas/label).
 Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 <p>Algoritma KNN, yaitu:</p>
 <ol class="simple">
 <li><p>Menentukan Nilai K</p></li>
-<li><p>Menghitung jarak data uji dengan data latih</p></li>
-<li><p>Mengurutkan jarak berdasarkan kecil ke besar</p></li>
-<li><p>Mengambil data sebanyak k terdekat, yaitu memilik k terdekat (tetangga terdekat)</p></li>
-<li><p>Memilih Class mayor</p></li>
+<li><p>Menghitung jarak data uji(data baru yang akan di evaluasi) dengan data latih(data lama yang sudah ada)</p></li>
+<li><p>Mengurutkan data berdasarkan jarak terkecil ke terbesar</p></li>
+<li><p>Mengambil data sebanyak k terdekat, yaitu memiliki k terdekat (tetangga terdekat)</p></li>
+<li><p>Menentukan kelas dari data baru sesui dengan k terdekat</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data in a csv format, each observation has a 4 measurements/features </span>
-<span class="c1"># and the species type.</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
-<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="200"
-    src="http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
 <p><strong>Langkah 1 : Import data yang diperlukan dan memeriksa fitur - fiturnya</strong></p>
 <p>Impor fungsi load_iris dari modul dataset scikit-learen dan buat objek iris Bunch (bunch adalah tipe objek khusus scikitlearn untuk menyimpan dataset dan atributnya).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import the load_iris function from dataset module</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 </pre></div>
 </div>
@@ -397,12 +411,13 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create bunch object containing iris dataset and its attributes.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Buat objek yang berisi dataset iris beserta atributnya</span>
 <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Melihat tipe dataset iris</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
@@ -415,6 +430,7 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 </div>
 </div>
+<p>Menampilkan dataset iris dengan array</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">data</span>
@@ -577,7 +593,7 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 </div>
 <p>Pada setiap pengamatan mewakili 1 bunga, dan 4 kolom mewakili 4 pengukuran.</p>
-<p>Fitur (ukuran) untuk melihat atribut data</p>
+<p>Menampilkan nama atribut yang ada pada dataset iris</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
@@ -608,6 +624,7 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 </div>
 </div>
+<p>Menampilkan class(spesies bunga) dari data iris</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span>
@@ -634,7 +651,7 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 </div>
 </div>
-<p>Memiliki 150 observasi dan 4 fitur</p>
+<p>Melihat jumlah data row dan column</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -647,31 +664,8 @@ Bunga iris memiliki: panjang sepal, lebar sepal, panjang dan lebar kelopak</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Feature matrix in a object named X</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
-<span class="c1"># response vector in a object named y</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(150, 4)
-(150,)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Step2: Split the data and Train the Model.(Pisahkan Data Uji dan Latih Modelnya)</p>
+<p>Terdapat 150 data dan 4 fitur/kolom</p>
+<p><strong>Langkah 2 : Pisahkan Data Uji dan Latih Modelnya</strong></p>
 <p>Fungsi <strong>train_test_split</strong> adalah fungsi untuk
 membagi data.<br />
 Parameter opsional <strong>test-size</strong> digunakan untuk menentukkan presentase pemisahan.<br />
@@ -681,6 +675,13 @@ Akurasi pengujian yang dihasilkan akan menjadi perkiraan yang lebih baik tentang
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># splitting the data into training and test sets (80:20)</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="c1"># X_train = Data latih </span>
+<span class="c1"># X_test = Data uji</span>
+<span class="c1"># y_train = Untuk menampung data latih</span>
+<span class="c1"># y_test =  Untuk menampung data uji</span>
 <span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -688,8 +689,10 @@ Akurasi pengujian yang dihasilkan akan menjadi perkiraan yang lebih baik tentang
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#shape of train and test objects</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#untuk mengambil data latih sebanyak 120 data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1">#untuk mengambil data uji sebanyak 30 data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -722,12 +725,13 @@ Metode <strong>fit</strong> digunakan untuk melatih model pada data training (X_
 Memilih nilai K yang optimal sangat  itu penting, jadi kami menyesuaikan dan menguji model untuk nilai yang berbeda untuk K (dari 1 hingga 25) menggunakan for loop dan mencatat akurasi pengujian KNN dalam variabel (skor).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import the KNeighborsClassifier class from sklearn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import the KNeighborsClassifier dari class sklearn</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 
-<span class="c1">#import metrics model to check the accuracy </span>
+<span class="c1">#import metrics model untuk mengecek akurasi</span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
-<span class="c1">#Try running from k=1 through 25 and record testing accuracy</span>
+
+<span class="c1">#Mencoba menjalankan dari k=1 hingga 25 kemudian di catat akurasi pengujiannya</span>
 <span class="n">k_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">scores_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -737,6 +741,43 @@ Memilih nilai K yang optimal sangat  itu penting, jadi kami menyesuaikan dan men
         <span class="n">y_pred</span><span class="o">=</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
         <span class="n">scores</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
         <span class="n">scores_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Test akurasi dari setiap nilai k(k=1 hingga 25)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.9333333333333333,
+ 2: 0.9333333333333333,
+ 3: 0.9666666666666667,
+ 4: 0.9666666666666667,
+ 5: 0.9666666666666667,
+ 6: 0.9666666666666667,
+ 7: 0.9666666666666667,
+ 8: 0.9666666666666667,
+ 9: 0.9666666666666667,
+ 10: 0.9666666666666667,
+ 11: 0.9666666666666667,
+ 12: 0.9666666666666667,
+ 13: 0.9666666666666667,
+ 14: 0.9666666666666667,
+ 15: 0.9666666666666667,
+ 16: 0.9666666666666667,
+ 17: 0.9666666666666667,
+ 18: 0.9666666666666667,
+ 19: 0.9666666666666667,
+ 20: 0.9333333333333333,
+ 21: 0.9666666666666667,
+ 22: 0.9333333333333333,
+ 23: 0.9666666666666667,
+ 24: 0.9666666666666667,
+ 25: 0.9666666666666667}
 </pre></div>
 </div>
 </div>
@@ -760,7 +801,7 @@ Untuk KNN kompleksitas model ditentukan oleh nilai K. Nilai K yang lebih besar m
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Testing Accuracy&#39;)
 </pre></div>
 </div>
-<img alt="_images/Tugas 3_30_1.png" src="_images/Tugas 3_30_1.png" />
+<img alt="_images/Tugas 3_34_1.png" src="_images/Tugas 3_34_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -776,6 +817,7 @@ Untuk KNN kompleksitas model ditentukan oleh nilai K. Nilai K yang lebih besar m
 </div>
 </div>
 </div>
+<p>Eksekusi Prediksi</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#0 = setosa, 1=versicolor, 2=virginica</span>
@@ -787,14 +829,14 @@ Untuk KNN kompleksitas model ditentukan oleh nilai K. Nilai K yang lebih besar m
          <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">classes</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_new</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;---&gt;&quot;</span> <span class="p">,</span><span class="n">classes</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_new</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;---&gt;&quot;</span> <span class="p">,</span><span class="n">classes</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>versicolor
-setosa
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 5, 2] ---&gt; versicolor
+[5, 4, 2, 2] ---&gt; setosa
 </pre></div>
 </div>
 </div>
@@ -832,13 +874,13 @@ setosa
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tugas 2 Diskritisasi</p>
+            <p class="prev-next-title">Tugas 2 - Diskritisasi</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Tugas%204.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tugas 4 - K-Means</p>
+        <p class="prev-next-title">Tugas 4 - Gaussian Naive Bayes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
